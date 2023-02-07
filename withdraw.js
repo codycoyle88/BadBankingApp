@@ -49,6 +49,14 @@ function Withdraw(){
         clearForm();
         return false;
       }
+
+      //Check to see if the value entered is a positive number, error if not
+      else if ( field <0 ) {
+        setStatus('Error: ' + 'Enter positive numbers only!');
+        setTimeout(() => setStatus(''),3000);
+        clearForm();
+        return false;
+      }
       //If the validation passes all tests, return success message and finish math.
       setStatus('Withdraw ' + 'Success!');
       setTimeout(() => setStatus(''),3000);
